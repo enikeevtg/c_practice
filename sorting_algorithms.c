@@ -20,6 +20,7 @@ int main() {
         if (scanf("%d%c", &array[i], &ch) != 2 || (i < n - 1 && ch != 32) || (i == n - 1 && ch != 10))
             error = 1;
 
+#ifdef BUBBLE
     for (int i = 0; i < n - 1 && error == 0; ++i)  // Сортировка пузырьком
         for (int j = 0; j < n - 1 - i; ++j)
             if (array[j] > array[j + 1]) {
@@ -27,6 +28,7 @@ int main() {
                 array[j] = array[j + 1];
                 array[j + 1] = tmp;
             }
+#endif
 
     for (int i = 0; i < n && error == 0; ++i)  // Распечатка отсортированного массива
         printf("%d ", array[i]);
